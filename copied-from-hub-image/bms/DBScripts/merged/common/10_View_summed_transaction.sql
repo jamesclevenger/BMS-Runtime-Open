@@ -1,0 +1,2 @@
+CREATE OR REPLACE VIEW summed_transaction AS 
+select lot.lotid, recordid, lot.scaleid, sum(trnqty) as total from ims_transaction ims INNER JOIN ims_lot lot ON ims.lotid = lot.lotid group by recordid, scaleid;

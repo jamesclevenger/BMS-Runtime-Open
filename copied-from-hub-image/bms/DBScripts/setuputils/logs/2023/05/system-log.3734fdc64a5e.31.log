@@ -1,0 +1,519 @@
+19:28:44.747 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.host' found in database.properties. Using value specifed in properties file 'bmsmysql'.
+19:28:44.750 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.port' found in database.properties. Using value specifed in properties file '3306'.
+19:28:44.750 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.username' found in database.properties. Using value specifed in properties file 'root'.
+19:28:44.751 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.password' found in database.properties. Using value specifed in properties file '09C42tUc1Z'.
+19:28:44.751 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.workbench.name' found in database.properties. Using value specifed in properties file 'workbench'.
+19:28:44.751 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.xadriver.name' did not have any value specified in the database.properties. Using default value 'com.mysql.jdbc.jdbc2.optional.MysqlXADataSource'.
+19:28:44.752 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.borrow.connection.timeout' did not have any value specified in the database.properties. Using default value '30'.
+19:28:44.752 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.maintenance.interval' did not have any value specified in the database.properties. Using default value '60'.
+19:28:44.752 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.test.query' did not have any value specified in the database.properties. Using default value 'Select 1'.
+19:28:44.753 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.min.pool.size' did not have any value specified in the database.properties. Using default value '3'.
+19:28:44.753 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.max.pool.size' did not have any value specified in the database.properties. Using default value '100'.
+19:28:44.753 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.max.idle.time' did not have any value specified in the database.properties. Using default value '120'.
+19:28:44.754 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'connectionpool.reap.timeout' found in database.properties. Using value specifed in properties file '1200'.
+19:28:50.002 [localhost-startStop-1] ERROR o.s.web.context.ContextLoader.initWebApplicationContext [331] - Context initialization failed
+java.lang.IllegalStateException: Unable to get the list of database that we need to register. Please contanct your administrator for further assistance.
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:87) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XABeanDefinition.createAllXARelatedBeans(XABeanDefinition.java:91) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XADataSources.postProcessBeanDefinitionRegistry(XADataSources.java:52) ~[middleware-19.5.jar:na]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:119) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403) ~[spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) ~[spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5128) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5653) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2247) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[na:1.8.0_292]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[na:1.8.0_292]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:76) ~[middleware-19.5.jar:na]
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: bmsmysql: Name or service not known
+	at java.net.Inet4AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_292]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_292]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:191) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	... 40 common frames omitted
+19:28:50.016 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext.doClose [872] - Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: Root WebApplicationContext: startup date [Wed May 31 19:28:44 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:344) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:869) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5174) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5865) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:187) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+19:28:50.016 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext.doClose [880] - Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Wed May 31 19:28:44 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:357) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:877) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5174) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5865) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:187) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+19:28:52.281 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.initWebApplicationContext [285] - Root WebApplicationContext: initialization started
+19:28:52.319 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext.prepareRefresh [510] - Refreshing Root WebApplicationContext: startup date [Wed May 31 19:28:52 GMT 2023]; root of context hierarchy
+19:28:52.337 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader.loadBeanDefinitions [317] - Loading XML bean definitions from ServletContext resource [/WEB-INF/classes/applicationContext.xml]
+19:28:52.615 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.host' found in database.properties. Using value specifed in properties file 'bmsmysql'.
+19:28:52.616 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.port' found in database.properties. Using value specifed in properties file '3306'.
+19:28:52.616 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.username' found in database.properties. Using value specifed in properties file 'root'.
+19:28:52.616 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.password' found in database.properties. Using value specifed in properties file '09C42tUc1Z'.
+19:28:52.617 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.workbench.name' found in database.properties. Using value specifed in properties file 'workbench'.
+19:28:52.617 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.xadriver.name' did not have any value specified in the database.properties. Using default value 'com.mysql.jdbc.jdbc2.optional.MysqlXADataSource'.
+19:28:52.617 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.borrow.connection.timeout' did not have any value specified in the database.properties. Using default value '30'.
+19:28:52.618 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.maintenance.interval' did not have any value specified in the database.properties. Using default value '60'.
+19:28:52.618 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.test.query' did not have any value specified in the database.properties. Using default value 'Select 1'.
+19:28:52.619 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.min.pool.size' did not have any value specified in the database.properties. Using default value '3'.
+19:28:52.619 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.max.pool.size' did not have any value specified in the database.properties. Using default value '100'.
+19:28:52.619 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.max.idle.time' did not have any value specified in the database.properties. Using default value '120'.
+19:28:52.620 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'connectionpool.reap.timeout' found in database.properties. Using value specifed in properties file '1200'.
+19:28:52.622 [localhost-startStop-1] INFO  o.s.j.d.DriverManagerDataSource.setDriverClassName [133] - Loaded JDBC driver: com.mysql.jdbc.Driver
+19:28:52.623 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createAllXARelatedBeans [86] - Creating datasource and session factory related beans.
+19:28:52.623 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createXAConnectionBeans [106] - Creating 'workbench' datasource and session factory related beans.
+19:28:52.627 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createRootBeanDefinition [45] - Created bean defintion for class 'com.atomikos.jdbc.AtomikosDataSourceBean'
+19:28:52.635 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createRootBeanDefinition [51] - Set the following attributes '{init-method=init,
+ destroy-method=close,
+ depends-on=transactionManager}' to bean 'com.atomikos.jdbc.AtomikosDataSourceBean'
+19:28:52.635 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createRootBeanDefinition [61] - Set the following properties '{xaProperties={characterEncoding=UTF-8,
+ sessionVariables=group_concat_max_len=500000,
+ cacheServerConfiguration=true,
+ useServerPrepStmts=true,
+ cachePrepStmts=true,
+ user=root,
+ useLocalSessionState=true,
+ URL=jdbc:mysql://bmsmysql:3306/workbench,
+ useUnicode=true,
+ password=09C42tUc1Z,
+ pinGlobalTxToPhysicalConnection=true},
+ maintenanceInterval=60,
+ minPoolSize=3,
+ borrowConnectionTimeout=30,
+ reapTimeout=1200,
+ testQuery=Select 1,
+ xaDataSourceClassName=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource,
+ maxIdleTime=120,
+ maxPoolSize=100,
+ uniqueResourceName=XA_WORKBENCH_1685561332627}' to bean 'com.atomikos.jdbc.AtomikosDataSourceBean'
+19:28:52.635 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createXAConnectionBeans [115] - Created data source bean defintion for database 'workbench' with bean name 'WORKBENCHDataSource'.
+19:28:52.637 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createRootBeanDefinition [45] - Created bean defintion for class 'org.springframework.orm.hibernate4.LocalSessionFactoryBean'
+19:28:52.638 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createRootBeanDefinition [51] - Set the following attributes '{}' to bean 'org.springframework.orm.hibernate4.LocalSessionFactoryBean'
+19:28:52.638 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createRootBeanDefinition [61] - Set the following properties '{dataSource=Root bean: class [com.atomikos.jdbc.AtomikosDataSourceBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null,
+ configLocation=classpath:ibpmidware_hib.cfg.xml}' to bean 'org.springframework.orm.hibernate4.LocalSessionFactoryBean'
+19:28:52.638 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createXAConnectionBeans [126] - Created session factory bean defintion for database 'workbench' with bean name 'WORKBENCH_SessionFactory'.
+19:28:52.639 [localhost-startStop-1] DEBUG o.g.m.hibernate.DatasourceUtilities.createAllXARelatedBeans [89] - Retrieve all applicable crop database.
+19:28:52.687 [localhost-startStop-1] ERROR o.s.web.context.ContextLoader.initWebApplicationContext [331] - Context initialization failed
+java.lang.IllegalStateException: Unable to get the list of database that we need to register. Please contanct your administrator for further assistance.
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:87) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XABeanDefinition.createAllXARelatedBeans(XABeanDefinition.java:91) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XADataSources.postProcessBeanDefinitionRegistry(XADataSources.java:52) ~[middleware-19.5.jar:na]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:119) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403) ~[spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) ~[spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5128) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5653) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2247) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[na:1.8.0_292]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[na:1.8.0_292]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:76) ~[middleware-19.5.jar:na]
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: bmsmysql
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1281) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_292]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:191) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	... 40 common frames omitted
+19:28:53.282 [localhost-startStop-1] WARN  n.s.e.config.ConfigurationFactory.parseConfiguration [134] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/usr/local/tomcat/webapps/GDMS/WEB-INF/lib/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+19:28:54.668 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext.doClose [862] - Closing Root WebApplicationContext: startup date [Wed May 31 19:28:52 GMT 2023]; root of context hierarchy
+19:28:54.670 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext.doClose [872] - Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: Root WebApplicationContext: startup date [Wed May 31 19:28:52 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:344) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:869) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5174) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5865) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:187) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+19:28:54.671 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext.doClose [880] - Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Wed May 31 19:28:52 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:357) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:877) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5174) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5865) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:187) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+19:29:00.341 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.host' found in database.properties. Using value specifed in properties file 'bmsmysql'.
+19:29:00.343 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.port' found in database.properties. Using value specifed in properties file '3306'.
+19:29:00.344 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.username' found in database.properties. Using value specifed in properties file 'root'.
+19:29:00.344 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.password' found in database.properties. Using value specifed in properties file '09C42tUc1Z'.
+19:29:00.344 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'db.workbench.name' found in database.properties. Using value specifed in properties file 'workbench'.
+19:29:00.345 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.xadriver.name' did not have any value specified in the database.properties. Using default value 'com.mysql.jdbc.jdbc2.optional.MysqlXADataSource'.
+19:29:00.345 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.borrow.connection.timeout' did not have any value specified in the database.properties. Using default value '30'.
+19:29:00.345 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.maintenance.interval' did not have any value specified in the database.properties. Using default value '60'.
+19:29:00.346 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.test.query' did not have any value specified in the database.properties. Using default value 'Select 1'.
+19:29:00.346 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.min.pool.size' did not have any value specified in the database.properties. Using default value '3'.
+19:29:00.346 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.max.pool.size' did not have any value specified in the database.properties. Using default value '100'.
+19:29:00.347 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [105] - Property value 'connectionpool.max.idle.time' did not have any value specified in the database.properties. Using default value '120'.
+19:29:00.347 [localhost-startStop-1] INFO  o.g.m.hibernate.DataSourceProperties.getPropertyValue [109] - Property value 'connectionpool.reap.timeout' found in database.properties. Using value specifed in properties file '1200'.
+19:29:05.593 [localhost-startStop-1] ERROR o.s.web.context.ContextLoader.initWebApplicationContext [331] - Context initialization failed
+java.lang.IllegalStateException: Unable to get the list of database that we need to register. Please contanct your administrator for further assistance.
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:87) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XABeanDefinition.createAllXARelatedBeans(XABeanDefinition.java:91) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XADataSources.postProcessBeanDefinitionRegistry(XADataSources.java:52) ~[middleware-19.5.jar:na]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:119) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403) ~[spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) ~[spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5128) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5653) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2247) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[na:1.8.0_292]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[na:1.8.0_292]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:76) ~[middleware-19.5.jar:na]
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: bmsmysql: Name or service not known
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_292]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:191) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	... 40 common frames omitted
+19:29:05.604 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext.doClose [872] - Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: Root WebApplicationContext: startup date [Wed May 31 19:28:59 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:344) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:869) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5174) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5865) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:187) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+19:29:05.605 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext.doClose [880] - Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Wed May 31 19:28:59 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:357) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:877) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5174) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5865) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:187) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+19:29:10.545 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (109) - Property value 'db.host' found in database.properties. Using value specifed in properties file 'bmsmysql'.
+19:29:10.546 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (109) - Property value 'db.port' found in database.properties. Using value specifed in properties file '3306'.
+19:29:10.547 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (109) - Property value 'db.username' found in database.properties. Using value specifed in properties file 'root'.
+19:29:10.547 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (109) - Property value 'db.password' found in database.properties. Using value specifed in properties file '09C42tUc1Z'.
+19:29:10.548 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (109) - Property value 'db.workbench.name' found in database.properties. Using value specifed in properties file 'workbench'.
+19:29:10.548 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (105) - Property value 'connectionpool.xadriver.name' did not have any value specified in the database.properties. Using default value 'com.mysql.jdbc.jdbc2.optional.MysqlXADataSource'.
+19:29:10.549 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (105) - Property value 'connectionpool.borrow.connection.timeout' did not have any value specified in the database.properties. Using default value '30'.
+19:29:10.549 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (105) - Property value 'connectionpool.maintenance.interval' did not have any value specified in the database.properties. Using default value '60'.
+19:29:10.549 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (105) - Property value 'connectionpool.test.query' did not have any value specified in the database.properties. Using default value 'Select 1'.
+19:29:10.550 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (105) - Property value 'connectionpool.min.pool.size' did not have any value specified in the database.properties. Using default value '3'.
+19:29:10.550 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (105) - Property value 'connectionpool.max.pool.size' did not have any value specified in the database.properties. Using default value '100'.
+19:29:10.550 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (105) - Property value 'connectionpool.max.idle.time' did not have any value specified in the database.properties. Using default value '120'.
+19:29:10.551 [localhost-startStop-1] INFO  org.generationcp.middleware.hibernate.DataSourceProperties.getPropertyValue (109) - Property value 'connectionpool.reap.timeout' found in database.properties. Using value specifed in properties file '1200'.
+19:29:10.620 [localhost-startStop-1] ERROR org.springframework.boot.SpringApplication.run (338) - Application startup failed
+java.lang.IllegalStateException: Unable to get the list of database that we need to register. Please contanct your administrator for further assistance.
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:87) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XABeanDefinition.createAllXARelatedBeans(XABeanDefinition.java:91) ~[middleware-19.5.jar:na]
+	at org.generationcp.middleware.hibernate.XADataSources.postProcessBeanDefinitionRegistry(XADataSources.java:52) ~[middleware-19.5.jar:na]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:119) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462) ~[spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) ~[spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:686) ~[spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320) ~[spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.run(SpringBootServletInitializer.java:117) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:108) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:68) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:175) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5642) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1038) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2247) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[na:1.8.0_292]
+	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[na:1.8.0_292]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120) ~[spring-jdbc-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.generationcp.middleware.hibernate.DatasourceUtilities.retrieveCropDatabases(DatasourceUtilities.java:76) ~[middleware-19.5.jar:na]
+	... 24 common frames omitted
+Caused by: java.net.UnknownHostException: bmsmysql
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1281) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_292]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_292]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:191) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.36.jar:5.1.36]
+	... 43 common frames omitted
+19:29:10.624 [localhost-startStop-1] WARN  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext.doClose (872) - Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@543d31fd: startup date [Wed May 31 19:29:08 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:344) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:869) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.doClose(EmbeddedWebApplicationContext.java:150) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.run(SpringBootServletInitializer.java:117) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:108) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:68) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:175) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5642) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]
+19:29:10.625 [localhost-startStop-1] WARN  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext.doClose (880) - Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@543d31fd: startup date [Wed May 31 19:29:08 GMT 2023]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:357) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:877) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.doClose(EmbeddedWebApplicationContext.java:150) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836) [spring-context-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.run(SpringBootServletInitializer.java:117) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:108) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.boot.context.web.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:68) [spring-boot-1.2.4.RELEASE.jar:1.2.4.RELEASE]
+	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:175) [spring-web-4.1.6.RELEASE.jar:4.1.6.RELEASE]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5642) [catalina.jar:7.0.109]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:1007) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:983) [catalina.jar:7.0.109]
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:639) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1128) [catalina.jar:7.0.109]
+	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:2020) [catalina.jar:7.0.109]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:823) [na:1.8.0_292]

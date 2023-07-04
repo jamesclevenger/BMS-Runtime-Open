@@ -1,0 +1,77 @@
+------------------------------------------------------------------------------------
+20150619 mchabito
+common cvterm: Modified definition of 'Transpiration' (cv_id=1010) to 'The amount of water transpired by leaf stomata'
+------------------------------------------------------------------------------------
+20150525 cip
+------------------------------------------------------------------------------------
+1. Re-classed other means and summary stat variables to 1610 & 1620
+2. Added terms used for column headers.
+------------------------------------------------------------------------------------
+20150502 cgm
+Added quite a few methods for summary statistics and a few summary statistic variables
+Classed mean variables and summary statistic variables as Treatment means and Summary statistics respectively 
+20150428 cgm
+------------------------------------------------------------------------------------
+Added class terms for "Statistical variable" with sum classes "Treatment mean" and "Summary statistic"
+terms 1600,1610 and1620.
+20150422 cgm
+------------------------------------------------------------------------------------
+Updated common Cv terms from Julian's excel file
+I did not transfer all wheat crop research ontology terms to the common list because that would be quite difficult
+and I believe different crops will have their own way of recording most of these variables.
+Also I did not make many of the Role changes that Julian requested because many of these variables are sometimes
+measured at the site leve and sometimes at the plot level. Role ijndicates where the data is stored and only
+Observation variates can be stored at both those levels.
+20150413 cgm
+Added Property and variable for StockID
+------------------------------------------------------------------------------------
+20150319 cgm
+Added one term for obsolete name type cvterm_id 1259 
+and the following scales
+17120	1030	cm/day	cm per day
+17130	1030	Mpa	Megapascal
+17140	1030	pg/g	Picogram per gram
+17150	1030	uF	Microfarad
+17160	1030	rank	Rank order
+
+------------------------------------------------------------------------------------
+20150305 cgm
+------------------------------------------------------------------------------------
+Made following changes to Common CV script:
+UPDATE cvterm_relationship SET object_id=1045 WHERE cvterm_relationship_id=1112;
+and added the following cvterm_relationship records
+cvterm_relationship_id	type_id	subject_id	object_id
+1125	1105	1460	1090
+1126	1105	1470	1090
+1127	1105	1480	1090
+1128	1105	1490	1090
+1129	1105	1510	1090
+1130	1105	1520	1090
+1131	1105	1530	1090
+1132	1105	1540	1090
+1133	1105	1550	1090
+1134	1105	1560	1090
+1135	1105	1570	1090
+1136	1105	1580	1090
+1137	1105	1590	1090
+1138	1105	8580	1090
+
+------------------------------------------------------------------------------------
+20141105 cip
+------------------------------------------------------------------------------------
+1. Added method ids 159, 260. Added method ids 922 & 923 originally from wheat.
+2. Removed extra IS A relationship record on Sample Order (cvterm 2190)
+(1515,1225,2190,1080)
+
+------------------------------------------------------------------------------------
+20140917 CGM
+------------------------------------------------------------------------------------
+Added sampling methods 76 and 77 to the methods script.
+
+20140905 CGM
+1. Addtional entry (19341,1225,2191,1080) in cvterm_relationship table.
+A class has been added on property BLOCK_ID_PROP (2191)
+------------------------------------------------------------------------------------
+
+20140828 CGM
+NFERT_NO, PDATE_NO and PDATE_TREAT added to common cv for testing multi-factorial trials construction

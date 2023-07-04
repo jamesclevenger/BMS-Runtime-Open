@@ -1,0 +1,61 @@
+version: '3'
+services:
+  bmsapp:
+    depends_on:
+      - bmsmysql
+    build: .
+    networks:
+      - bmsnet
+    ports:
+      - "8888:8080"
+    restart: always
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-}
+      - AWS_REGION=${AWS_REGION:-}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME:-}
+      - SFTP_HOST=${SFTP_HOST:-}
+      - SFTP_USERNAME=${SFTP_USERNAME:-}
+      - SFTP_PASSWORD=${SFTP_PASSWORD:-}
+      - SFTP_PRIVATE_KEY_PATH=${SFTP_PRIVATE_KEY_PATH:-}
+      - BMS_CROPS=${BMS_CROPS:?err}
+      - BMS_DB_PASSWORD=${BMS_DB_PASS:?err}
+      - CATALINA_OPTS=-javaagent:/opt/spring-instrument-4.1.6.RELEASE.jar
+      - JAVA_OPTS=-server -Xms${BMS_MEMORY:?err} -Xmx${BMS_MEMORY:?err} -XX:+CMSClassUnloadingEnabled ${LIQUIBASE_PARAM}
+    volumes:
+#      - mysqldata:/var/lib/mysql
+      - ./custom:/custom
+      - ./config:/bms/BMSConfig/bmsdocker
+    entrypoint: ['/custom/copy.sh'] 
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "50"
+
+  bmsmysql:
+    image: mysql:5.6
+    networks:
+      - bmsnet
+    ports:
+       - "3307:3306"
+    volumes:
+ #        - mysqldata:/var/lib/mysql
+       - ./mysql/conf:/etc/mysql/conf.d
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ulimits:
+       nofile:
+         soft: 20000
+         hard: 40000
+    environment:
+      MYSQL_ROOT_PASSWORD: ${BMS_DB_PASS:?err}
+
+volumes:
+  mysqldata:
+    external: false
+
+networks:
+  bmsnet:
+    driver: bridge

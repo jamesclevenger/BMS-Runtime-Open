@@ -1,0 +1,31 @@
+# INTELLIJ IDEA IGNORES
+*.iml
+*.ipr
+*.iws
+.idea/
+
+/bin
+.project
+.classpath
+
+### JetBrains template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
+
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+merged/brachiaria/12_ibdbv2_brachiaria_DMS_CV_20160714.sql
+merged/brachiaria/12_ibdbv2_brachiaria_DMS_CV_20160714.sql
+
+setuputils/scripts/config/

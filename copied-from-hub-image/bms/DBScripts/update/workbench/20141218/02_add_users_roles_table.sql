@@ -1,0 +1,14 @@
+START TRANSACTION;
+
+DROP TABLE IF EXISTS users_roles; 
+CREATE TABLE users_roles (
+  id INT NOT NULL AUTO_INCREMENT,
+  userid INT NOT NULL,
+  role VARCHAR(30) NOT NULL,  
+  PRIMARY KEY (id),
+  CONSTRAINT fk_users FOREIGN KEY (userid) REFERENCES users (userid) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE INDEX users_roles_idx01 ON users_roles (userid);
+
+COMMIT;
