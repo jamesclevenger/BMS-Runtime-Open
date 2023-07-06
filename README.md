@@ -11,6 +11,7 @@ BMS_DB_HOST=bmsmysql
 BMS_DB_PASS=<your-mysql-password-here>
 BMS_CROPS=maize
 BMS_MEMORY=2g
+LIQUIBASE_PARAM=-Dspring.profiles.active=development
 ```
 
 Start the runtime with
