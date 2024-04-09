@@ -20,8 +20,27 @@ services:
       - SFTP_PRIVATE_KEY_PATH=${SFTP_PRIVATE_KEY_PATH:-}
       - BMS_CROPS=${BMS_CROPS:?err}
       - BMS_DB_PASSWORD=${BMS_DB_PASS:?err}
+      - BMS_ACTIVE_USERS_MAX_NUMBER=${BMS_ACTIVE_USERS_MAX_NUMBER}
+      - BMS_DB_HOST=${BMS_DB_HOST}
       - CATALINA_OPTS=-javaagent:/opt/spring-instrument-4.1.6.RELEASE.jar
       - JAVA_OPTS=-server -Xms${BMS_MEMORY:?err} -Xmx${BMS_MEMORY:?err} -XX:+CMSClassUnloadingEnabled ${LIQUIBASE_PARAM}
+      - security.2fa.enabled=${SECURITY_2FA_ENABLED}
+      - security.2fa.enforce.otp.on.unknown.device=${SECURITY_2FA_ENFORCE_OTP_ON_UNKNOWN_DEVICE}
+      - security.2fa.otp.expiry.interval=${SECURITY_2FA_OTP_EXPIRY_INTERVAL}
+      - security.2fa.otp.length=${SECURITY_2FA_OTP_LENGTH}
+      - security.2fa.otp.maximum.verification.attempts=${SECURITY_2FA_OTP_MAXIMUM_VERIFICATION_ATTEMPTS}
+      - security.2fa.otp.maximum.verification.attempts.expiry.interval=${SECURITY_2FA_OTP_MAXIMUM_VERIFICATION_ATTEMPTS_EXPIRY_INTERVAL}
+      - security.login.password.minimum.length=${SECURITY_LOGIN_PASSWORD_MINIMUM_LENGTH}
+      - security.login.password.minimum.uppercase=${SECURITY_LOGIN_PASSWORD_MINIMUM_UPPERCASE}
+      - security.login.password.minimum.numeric=${SECURITY_LOGIN_PASSWORD_MINIMUM_NUMERIC}
+      - security.login.password.minimum.special.character=${SECURITY_LOGIN_PASSWORD_MINIMUM_SPECIAL_CHARACTER}
+      - bv.design.validation.on.login.enabled=${BV_DESIGN_VALIDATION_ON_LOGIN_ENABLED}
+      - MAIL_SERVER_HOST=${MAIL_SERVER_HOST}
+      - MAIL_SERVER_PORT=${MAIL_SERVER_PORT}
+      - MAIL_SERVER_PROTOCOL=${MAIL_SERVER_PROTOCOL}
+      - MAIL_SERVER_USERNAME=${MAIL_SERVER_USERNAME}
+      - MAIL_SERVER_SENDER_EMAIL=${MAIL_SERVER_SENDER_EMAIL}
+      - MAIL_SERVER_PASSWORD=${MAIL_SERVER_PASSWORD}
     volumes:
 #      - mysqldata:/var/lib/mysql
       - ./custom:/custom
@@ -35,7 +54,8 @@ services:
         max-file: "50"
 
   bmsmysql:
-    image: mysql:5.6
+    #image: mysql:5.6
+    image: mysql:5.7.41
     networks:
       - bmsnet
     ports:
@@ -43,7 +63,7 @@ services:
     volumes:
  #        - mysqldata:/var/lib/mysql
        - ./mysql/conf:/etc/mysql/conf.d
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password --max_allowed_packet=32505856
     restart: always
     ulimits:
        nofile:
